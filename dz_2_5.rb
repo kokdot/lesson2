@@ -19,10 +19,11 @@ vis = false
 num = 0
 vis = true if year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)
 i = 0
-while i < month - 1
-  num += a[i]
-  i += 1
-end
+# while i < month - 1
+#   num += a[i]
+#   i += 1
+# end
+num = a.take(month-1).sum
 num += 1 if month > 2 && vis 
 num += day
 puts "Дата, которую Вы ввели, является #{num} днем в году"

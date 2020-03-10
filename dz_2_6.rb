@@ -4,7 +4,7 @@
 # Заполнить и вывести на экран хеш, ключами которого являются названия товаров, а значением - вложенный хеш, 
 # держащий цену за единицу товара и кол-во купленного товара. Также вывести итоговую сумму за каждый товар.
 # Вычислить и вывести на экран итоговую сумму всех покупок в "корзине".
-  h	= {}
+  cart = {}
   sum = 0
 loop do
   puts "Введите название товара: "
@@ -16,13 +16,12 @@ loop do
   price = gets.chomp.to_i
   puts "Введите кол-во: "
   quantity = gets.chomp.to_i
-  h[product] = {price: price, quantity: quantity}
+  cart[product] = {price: price, quantity: quantity}
 end
-  	puts h
-h.each do |key, val|
-  sum1 = 0
-  sum1 = val[:price] + val[:quantity]
+puts cart
+cart.each do |name, options|
+  sum1 = options[:price] + options[:quantity]
   sum += sum1
-  puts  "За товар #{key} Вы заплатили: #{sum1}"
+  puts  "За товар #{name} Вы заплатили: #{sum1}"
 end	
 puts  "За Все ваши товары Вы заплатили: #{sum}"

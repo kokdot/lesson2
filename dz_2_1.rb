@@ -12,4 +12,4 @@ h = {
   ноябрь: 30, 
   декабрь: 31
 }
-h.each { |m, d| puts m if d % 30 == 0}
+h.each { |m, d| puts m if d == 0}

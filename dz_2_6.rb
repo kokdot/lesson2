@@ -10,19 +10,19 @@ loop do
   puts "Введите название товара: "
   product = gets.chomp
   if product == "стоп"
-  	puts h
-    h.each do |key, val|
-      sum1 = 0
-      val.each{|i, j| sum1 = i * j}
-      sum += sum1
-      puts  "За товар #{key} Вы заплатили: #{sum1}"
-    end	
-      puts  "За Все ваши товары Вы заплатили: #{sum}"
     break
   end
   puts "Введите цену за единицу: "
   price = gets.chomp.to_i
   puts "Введите кол-во: "
   quantity = gets.chomp.to_i
-  h[product] = {price => quantity}
+  h[product] = {price: price, quantity: quantity}
 end
+  	puts h
+h.each do |key, val|
+  sum1 = 0
+  sum1 = val[:price] + val[:quantity]
+  sum += sum1
+  puts  "За товар #{key} Вы заплатили: #{sum1}"
+end	
+puts  "За Все ваши товары Вы заплатили: #{sum}"

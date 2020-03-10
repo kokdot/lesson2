@@ -2,8 +2,7 @@
 arr = [1, 1]
 i = 2
 loop do
-  a = arr[i - 1] + arr[i - 2]
+  a = arr[-1] + arr[-2]
   break if a > 100
-  arr[i] = a
-  i += 1	
+  arr << a
 end
